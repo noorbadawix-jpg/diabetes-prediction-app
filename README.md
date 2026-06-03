@@ -11,13 +11,13 @@ This repository contains an end-to-end Data Mining and Machine Learning pipeline
 
 
 ## Repository Structure
-* `Colabproject.ipynb`: The Jupyter Notebook containing the full data science pipeline (EDA, Cleaning, Feature Engineering, Training, Evaluation).
-* `app.py`: The Streamlit web application script.
-* `diabetes_dataset (1).csv`: The original clinical dataset.
-* `diabetes_model_tuned.pkl`: The tuned Random Forest model saved via Joblib.
-* `scaler.pkl`: The StandardScaler object used to normalize numerical inputs.
-* `label_encoders.pkl`: The dictionary of LabelEncoders for categorical data.
-* `requirements.txt`: The dependencies required to run the web app.
+* [`Colabproject.ipynb`](./Colabproject.ipynb): The Jupyter Notebook containing the full data science pipeline (EDA, Cleaning, Feature Engineering, Training, Evaluation).
+* [`app.py`](./app.py): The Streamlit web application script.
+* [`diabetes_dataset (1).csv`](./diabetes_dataset%20(1).csv): The original clinical dataset.
+* [`diabetes_model_tuned.pkl`](./diabetes_model_tuned.pkl): The tuned Random Forest model saved via Joblib.
+* [`scaler.pkl`](./scaler.pkl): The StandardScaler object used to normalize numerical inputs.
+* [`label_encoders.pkl`](./label_encoders.pkl): The dictionary of LabelEncoders for categorical data.
+* [`requirements.txt`](./requirements.txt): The dependencies required to run the web app.
 
 
 
