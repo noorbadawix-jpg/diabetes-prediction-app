@@ -1,11 +1,12 @@
 # Diabetes Risk Prediction Pipeline & Web App
 
 
-
 ## Project Overview
 This repository contains an end-to-end Data Mining and Machine Learning pipeline designed to predict a patient's risk of diabetes based on clinical and demographic data. This project was developed as a final academic project, fulfilling requirements for data exploration, preprocessing, algorithm tuning, and web deployment.
 
 **Live Web Application:** [Click here to view the app](https://7ch6nx6o7khacbppsgvtvd.streamlit.app/)
+
+
 **PPT VIDEO:** https://youtu.be/QAGIwLhjhIA
 
 
