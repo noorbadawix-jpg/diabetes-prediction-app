@@ -19,7 +19,10 @@ This repository contains an end-to-end Data Mining and Machine Learning pipeline
 * [`scaler.pkl`](./scaler.pkl): The StandardScaler object used to normalize numerical inputs.
 * [`label_encoders.pkl`](./label_encoders.pkl): The dictionary of LabelEncoders for categorical data.
 * [`requirements.txt`](./requirements.txt): The dependencies required to run the web app.
-
+  
+  *Dataset Source*
+The clinical data used to train this model is the **100,000 Diabetes Clinical Dataset**. 
+* **Original Source:** [View and download the original dataset on Kaggle](https://www.kaggle.com/datasets/priyamchoksi/100000-diabetes-clinical-dataset)
 
 
 ## 1. Data Discovery & Cleaning
