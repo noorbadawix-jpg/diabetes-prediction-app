@@ -6,8 +6,10 @@ This repository contains an end-to-end Data Mining and Machine Learning pipeline
 
 **Live Web Application:** [Click here to view the app](https://7ch6nx6o7khacbppsgvtvd.streamlit.app/)
 
+**Live Web Application Demo:** https://youtu.be/iRzyBMTyBNo
 
-**PPT VIDEO:** https://youtu.be/QAGIwLhjhIA
+**Presentation VIDEO:** https://youtu.be/QAGIwLhjhIA
+
 
 
 
