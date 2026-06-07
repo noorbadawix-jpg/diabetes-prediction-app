@@ -45,6 +45,7 @@ with r_col3:
 # Prediction Button
 if st.button("Predict Diabetes Risk"):
     try:
+        # Encode categorical inputs
         encoded_gender = label_encoders['gender'].transform([gender])[0]
         if location in label_encoders['location'].classes_:
             encoded_location = label_encoders['location'].transform([location])[0]
@@ -53,15 +54,13 @@ if st.button("Predict Diabetes Risk"):
             
         encoded_smoking = label_encoders['smoking_history'].transform([smoking_history])[0]
         
-        input_data = pd.DataFrame([[
-            year, encoded_gender, age, encoded_location,
-            int(race_aa), int(race_asian), int(race_caucasian), int(race_hispanic), int(race_other),
-            hypertension, heart_disease, encoded_smoking, bmi, hba1c, glucose
-        ]], columns=['year', 'gender', 'age', 'location', 'race:AfricanAmerican', 'race:Asian', 
-                     'race:Caucasian', 'race:Hispanic', 'race:Other', 'hypertension', 
-                     'heart_disease', 'smoking_history', 'bmi', 'hbA1c_level', 'blood_glucose_level'])
-        
-        # Structure the input as a dataframe (ensure DOUBLE brackets [[ ]] are used)
+        # Calculate the BMI Category feature
+        if bmi < 18.5: bmi_cat = 3 
+        elif bmi < 24.9: bmi_cat = 1 
+        elif bmi < 29.9: bmi_cat = 2 
+        else: bmi_cat = 0 
+
+        # Structure the input as a dataframe (Notice the DOUBLE brackets [[ ]] )
         input_data = pd.DataFrame([[
             year, encoded_gender, age, encoded_location,
             int(race_aa), int(race_asian), int(race_caucasian), int(race_hispanic), int(race_other),
@@ -70,10 +69,8 @@ if st.button("Predict Diabetes Risk"):
                      'race:Caucasian', 'race:Hispanic', 'race:Other', 'hypertension', 
                      'heart_disease', 'smoking_history', 'bmi', 'hbA1c_level', 'blood_glucose_level', 'BMI_Category_Encoded'])
         
-        # Scale the 2D dataframe
+        # Scale and predict (Notice the [0] is AT THE END, outside the parenthesis)
         input_scaled = scaler.transform(input_data)
-        
-        # Predict using the 2D scaled data, THEN extract the single result with [0]
         prediction = model.predict(input_scaled)[0]
         probability = model.predict_proba(input_scaled)[0][1]
         
@@ -85,4 +82,3 @@ if st.button("Predict Diabetes Risk"):
             
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
-        
