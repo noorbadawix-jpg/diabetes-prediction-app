@@ -8,7 +8,7 @@ This repository contains an end-to-end Data Mining and Machine Learning pipeline
 
 **Live Web Application Demo:** https://youtu.be/iRzyBMTyBNo
 
-**Presentation VIDEO:** https://youtu.be/QAGIwLhjhIA
+**Presentation Video:** https://youtu.be/QAGIwLhjhIA
 
 
 
