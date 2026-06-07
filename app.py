@@ -61,7 +61,19 @@ if st.button("Predict Diabetes Risk"):
                      'race:Caucasian', 'race:Hispanic', 'race:Other', 'hypertension', 
                      'heart_disease', 'smoking_history', 'bmi', 'hbA1c_level', 'blood_glucose_level'])
         
+        # Structure the input as a dataframe (ensure DOUBLE brackets [[ ]] are used)
+        input_data = pd.DataFrame([[
+            year, encoded_gender, age, encoded_location,
+            int(race_aa), int(race_asian), int(race_caucasian), int(race_hispanic), int(race_other),
+            hypertension, heart_disease, encoded_smoking, bmi, hba1c, glucose, bmi_cat
+        ]], columns=['year', 'gender', 'age', 'location', 'race:AfricanAmerican', 'race:Asian', 
+                     'race:Caucasian', 'race:Hispanic', 'race:Other', 'hypertension', 
+                     'heart_disease', 'smoking_history', 'bmi', 'hbA1c_level', 'blood_glucose_level', 'BMI_Category_Encoded'])
+        
+        # Scale the 2D dataframe
         input_scaled = scaler.transform(input_data)
+        
+        # Predict using the 2D scaled data, THEN extract the single result with [0]
         prediction = model.predict(input_scaled)[0]
         probability = model.predict_proba(input_scaled)[0][1]
         
